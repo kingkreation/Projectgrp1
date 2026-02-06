@@ -37,8 +37,6 @@ This project closely follows the assignment guidelines while pushing for higher 
 medium-landing-page/
 ├── index.html          # Main landing page
 ├── style.css           # All styling
-├── image/
-│   └── illustration.png   # Hero image
 ├── README.md
 └── screenshot.png   
 ```
