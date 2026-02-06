@@ -122,7 +122,7 @@ nav {
     line-height: 0.95;
     margin-bottom: 24px;
     font-weight: 500;
- word-break: break-word;
+    word-break: break-word;
     max-width: 100%;
     overflow-wrap: break-word;
 }
@@ -250,7 +250,7 @@ footer {
     footer {
         background-color: #f7f4ed;
         color: #242424;
-        border-top: 1px solid #e5e5;
+        border-top: 1px solid #e5e5e5;
     }
     
     .footer-links {
@@ -259,7 +259,7 @@ footer {
     }
 }
 
-@media (min: 1080px) {
+@media (min-width: 1080px) {
     nav, .hero-container {
         max-width: 1192px;
         margin-left: auto;
@@ -267,8 +267,27 @@ footer {
     }
 }
 
-/* HIDE ALL NAV LINKS ON MOBILE (including Sign in) */
-@media (max-width: 903px) {
+/* NAVIGATION BEHAVIOR BY SCREEN SIZE */
+
+/* Tablet (728px - 903px): Show ALL nav links */
+@media (min-width: 728px) and (max-width: 903px) {
+    .nav-links li {
+        display: block;
+    }
+}
+
+/* Small Tablet (552px - 727px): Show ONLY "Sign in" */
+@media (min-width: 552px) and (max-width: 727px) {
+    .nav-links li {
+        display: none; /* Hide all */
+    }
+    .nav-links li:nth-child(4) { /* Show only 4th child = "Sign in" */
+        display: block;
+    }
+}
+
+/* Mobile (< 552px): Hide ALL nav links */
+@media (max-width: 551px) {
     .nav-links li {
         display: none;
     }
