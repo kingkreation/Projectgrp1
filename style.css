@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
     margin: 0;
     padding: 0;
     color: #242424;
@@ -49,6 +49,7 @@ header {
 }
 
 nav {
+    font-family: soehne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +59,7 @@ nav {
 }
 
 .logo {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 32px;
     font-weight: bold;
     letter-spacing: -1.5px;
@@ -66,18 +67,21 @@ nav {
 
 /* Align links and button in the same row */
 .nav-right {
+    font-family: soehne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
 .nav-links {
+    font-family: soehne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     align-items: center;
     font-size: 14px;
 }
 
 /* --- Button Variants --- */
 .btn {
+    font-family: soehne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -93,6 +97,7 @@ nav {
 }
 
 .btn-large {
+    
     padding: 12px 40px;
     font-size: 20px;
     margin-top: 20px;
@@ -119,6 +124,7 @@ nav {
 }
 
 .hero-title {
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 70px;
     line-height: 0.95;
     font-feature-settings: 'pnum' on, 'lnum' on;
@@ -130,6 +136,7 @@ nav {
 }
 
 .hero-subtitle {
+    font-family: charter, soehne;
     font-size: 22px;
     line-height: 1.2;
     margin-bottom: 32px;
@@ -157,6 +164,7 @@ footer {
 }
 
 .footer-links {
+    font-family: soehne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: left;
     gap: 15px;
