@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+    font-family: 'GT-Super-Text-Book', 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    color: #242424;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+/* Navbar */
+header {
+    background-color: #f7f4ed; /* Matching the cream color in screenshot */
+    border-bottom: 1px solid #242424;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Lora', serif;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: -1.5px;
+}
+
+.nav-links {
+    align-items: center;
+    font-size: 14px;
+}
+
+/* Buttons */
+.btn {
+    background-color: #1a8917; /* Medium Green for Hero CTA */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.btn-black {
+    background-color: #191919;
+}
+
+.btn-large {
+    padding: 12px 40px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f7f4ed;
+    padding: 80px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #242424;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 100px; /* Large scale for desktop */
+    line-height: 0.95;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.hero p {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: #242424;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    font-size: 13px;
+    color: #6b6b6b;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 20px;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        text-align: left;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .btn {
+        background-color: #1a8917; /* As seen in mobile screenshot */
+    }
+}
