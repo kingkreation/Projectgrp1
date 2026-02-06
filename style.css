@@ -177,6 +177,10 @@ footer {
     .hero-container {
         margin-left: 48px;
         margin-right: 48px;
+        height: 100%; /* FULL HEIGHT */
+        display: flex; /* FLEX CONTAINER */
+        flex-direction: column; /* COLUMN LAYOUT */
+        justify-content: center; /* VERTICAL CENTERING */
     }
     .hero-title {
         font-size: 106px;
