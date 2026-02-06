@@ -120,6 +120,7 @@ nav {
 .hero-title {
     font-size: 70px;
     line-height: 0.95;
+    font-feature-settings: 'pnum' on, 'lnum' on;
     margin-bottom: 24px;
     font-weight: 500;
     word-break: break-word;
@@ -128,7 +129,7 @@ nav {
 }
 
 .hero-subtitle {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.2;
     margin-bottom: 32px;
     color: #242424;
