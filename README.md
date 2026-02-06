@@ -43,6 +43,11 @@ medium-landing-page/
 └── screenshot.png   
 ```
 
+## Live Demo
+
+You can view the live version of this project at the following link:  
+[Live Preview on GitHub Pages](https://kingkreation.github.io/Projectgrp1/)
+
 ## How to Run / View the Project
 
 1. Clone or download this repository
