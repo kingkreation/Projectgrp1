@@ -7,50 +7,61 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Medium</div>
-            <ul class="nav-links">
-                <li class="desktop-only"><a href="#">Our story</a></li>
-                <li class="desktop-only"><a href="#">Membership</a></li>
-                <li class="desktop-only"><a href="#">Write</a></li>
-                <li class="desktop-only"><a href="#">Sign In</a></li>
-                <li><button class="btn btn-black">Get started</button></li>
-            </ul>
+    <header class="navbar">
+        <nav class="container">
+            <div class="logo">
+                <a href="#">Medium</a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links desktop-only">
+                    <li><a href="#">Our story</a></li>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">Write</a></li>
+                    <li><a href="#">Sign in</a></li>
+                </ul>
+                <button class="btn btn-black">Get started</button>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <h1>Human <br>stories & ideas</h1>
-                <p>A place to read, write, and deepen your understanding</p>
-                <button class="btn btn-large">Start reading</button>
-            </div>
-            <div class="hero-image desktop-only">
-                <img src="image/illustration.png" alt="Medium Illustration">
+            <div class="container hero-wrapper">
+                <div class="hero-content">
+                    <h1>Human <br>stories & ideas</h1>
+                    <h2>A place to read, write, and deepen your understanding</h2>
+                    <button class="btn btn-black btn-large">Start reading</button>
+                </div>
+                <div class="hero-image desktop-only">
+                    <img src="image/illustration.png" alt="Medium Illustration">
+                </div>
             </div>
         </section>
 
-        <section class="features">
-            <h2>Why Medium?</h2>
-            <p>Explore fresh ideas from writers worldwide.</p>
-        </section>
+        <section class="container features">
+            <div class="trending-header">
+                <span class="icon">📈</span>
+                <span>Trending on Medium</span>
+            </div>
+            </section>
     </main>
 
-    <footer>
-        <div class="footer-links">
-            <a href="#">Help</a>
-            <a href="#">Status</a>
-            <a href="#">About</a>
-            <a href="#">Careers</a>
-            <a href="#">Press</a>
-            <a href="#">Blog</a>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Text to speech</a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Help</a>
+                <a href="#">Status</a>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Text to speech</a>
+                <a href="#">Teams</a>
+            </div>
         </div>
-        <p>© 2025 Medium. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

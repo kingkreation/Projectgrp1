@@ -1,142 +1,188 @@
-/* General Styles */
+/* CSS Reset & Variables */
+:root {
+    --medium-yellow: #FFC017;
+    --medium-black: #191919;
+    --medium-border: rgba(41, 41, 41, 1);
+    --font-serif: 'gt-super', Georgia, serif;
+    --font-sans: 'sohne', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'GT-Super-Text-Book', 'Georgia', serif;
-    margin: 0;
-    padding: 0;
-    color: #242424;
-    background-color: #fff;
+    font-family: var(--font-sans);
+    color: var(--medium-black);
+    background-color: white;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 /* Navbar */
-header {
-    background-color: #f7f4ed; /* Matching the cream color in screenshot */
-    border-bottom: 1px solid #242424;
+.navbar {
+    background-color: var(--medium-yellow);
+    border-bottom: 1px solid var(--medium-black);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 75px;
+    display: flex;
+    align-items: center;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
 }
 
-.logo {
-    font-family: 'Lora', serif;
+.logo a {
+    font-family: var(--font-serif);
     font-size: 32px;
-    font-weight: bold;
-    letter-spacing: -1.5px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    text-decoration: none;
+    color: var(--medium-black);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 .nav-links {
-    align-items: center;
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--medium-black);
     font-size: 14px;
 }
 
 /* Buttons */
 .btn {
-    background-color: #1a8917; /* Medium Green for Hero CTA */
-    color: #fff;
-    padding: 10px 20px;
+    border-radius: 25px;
     border: none;
     cursor: pointer;
-    border-radius: 25px;
-    font-size: 16px;
+    font-size: 14px;
+    transition: background 0.2s;
 }
 
 .btn-black {
-    background-color: #191919;
+    background-color: var(--medium-black);
+    color: white;
+    padding: 10px 20px;
 }
 
 .btn-large {
-    padding: 12px 40px;
+    padding: 12px 45px;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 /* Hero Section */
 .hero {
-    background-color: #f7f4ed;
-    padding: 80px 50px;
+    background-color: var(--medium-yellow);
+    border-bottom: 1px solid var(--medium-black);
+    height: 450px;
+    overflow: hidden;
     display: flex;
     align-items: center;
+}
+
+.hero-wrapper {
+    display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #242424;
+    align-items: center;
+    height: 100%;
 }
 
 .hero-content {
-    max-width: 600px;
+    flex: 1;
+    max-width: 550px;
 }
 
 .hero h1 {
-    font-size: 100px; /* Large scale for desktop */
+    font-family: var(--font-serif);
+    font-size: 95px;
     line-height: 0.95;
-    margin-bottom: 35px;
-    font-weight: 500;
+    font-weight: 400;
+    margin-bottom: 25px;
 }
 
-.hero p {
+.hero h2 {
     font-size: 24px;
+    font-weight: 400;
     line-height: 1.2;
-    margin-bottom: 40px;
-    color: #242424;
+    max-width: 450px;
+}
+
+.hero-image {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    /* Prevents the image from becoming "too big" */
 }
 
 /* Footer */
-footer {
-    text-align: center;
-    padding: 40px;
-    background-color: #fff;
-    font-size: 13px;
-    color: #6b6b6b;
+.footer {
+    padding: 20px 0;
+    border-top: 1px solid #eee;
 }
 
 .footer-links {
     display: flex;
-    justify-content: center;
     gap: 15px;
-    margin-bottom: 15px;
     flex-wrap: wrap;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        padding: 10px 20px;
-    }
+.footer-links a {
+    color: #6b6b6b;
+    font-size: 13px;
+    text-decoration: none;
+}
 
+/* Responsiveness */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 75px;
+    }
+}
+
+@media (max-width: 768px) {
     .desktop-only {
         display: none;
     }
-
+    
     .hero {
-        padding: 60px 20px;
-        text-align: left;
+        height: auto;
+        padding: 60px 0;
     }
-
+    
     .hero h1 {
         font-size: 70px;
     }
-
-    .hero p {
-        font-size: 18px;
-    }
-
-    .btn {
-        background-color: #1a8917; /* As seen in mobile screenshot */
+    
+    .hero-content {
+        text-align: left;
     }
 }
