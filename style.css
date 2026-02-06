@@ -11,7 +11,7 @@ body {
     padding: 0;
     color: #242424;
     background-color: #fff;
-    overflow-x: hidden; /* Prevents horizontal scroll on small screens */
+    overflow-x: hidden;
 }
 
 a {
@@ -51,6 +51,13 @@ nav {
     letter-spacing: -1.5px;
 }
 
+/* CRITICAL FIX: Align nav links + button horizontally */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .nav-links {
     align-items: center;
     font-size: 14px;
@@ -65,11 +72,11 @@ nav {
     border-radius: 25px;
     font-size: 16px;
     display: inline-block;
-    background-color: #1a8917; /* Green for mobile */
+    background-color: #1a8917; /* GREEN FOR MOBILE (hero button) */
 }
 
 .btn-black {
-    background-color: #191919;
+    background-color: #191919; /* Header button stays black always */
 }
 
 .btn-large {
@@ -78,7 +85,7 @@ nav {
     margin-top: 20px;
 }
 
-/* Hero Section Base */
+/* Hero Section */
 .hero {
     background-color: #f7f4ed;
     border-bottom: 1px solid #242424;
@@ -93,11 +100,11 @@ nav {
 }
 
 .hero-content {
-    text-align: left; /* Left aligned on mobile too */
+    text-align: left; /* LEFT ALIGNED ON MOBILE (as requested) */
 }
 
 .hero-title {
-    font-size: 70px; /* Default mobile size */
+    font-size: 70px;
     line-height: 0.95;
     margin-bottom: 24px;
     font-weight: 500;
@@ -115,7 +122,7 @@ nav {
 }
 
 .hero-image {
-    display: none; /* Hidden on mobile */
+    display: none;
 }
 
 .hero-image img {
@@ -123,7 +130,7 @@ nav {
     object-fit: contain;
 }
 
-/* Footer Base */
+/* Footer */
 footer {
     padding: 40px 24px;
     background-color: #fff;
@@ -140,69 +147,57 @@ footer {
     flex-wrap: wrap;
 }
 
-/* 2. Responsive Breakpoints */
-
-/* Small Tablets / Large Phones */
+/* Responsive Breakpoints */
 @media (min-width: 552px) {
     .hero-container {
         margin-top: 40px;
     }
-    
     .hero-title {
         font-size: 80px;
         line-height: 72px;
         letter-spacing: -0.055em;
     }
-    
     .hero-subtitle {
         font-size: 16px;
         line-height: 24px;
     }
 }
 
-/* Tablets (iPad) */
 @media (min-width: 728px) {
     .hero-container {
         margin-left: 48px;
         margin-right: 48px;
     }
-    
     .hero-title {
         font-size: 106px;
         line-height: 95px;
     }
-    
     .hero-subtitle {
         font-size: 22px;
         line-height: 28px;
         margin-bottom: 48px;
     }
-    
     .footer-links {
         display: flex;
         justify-content: center;
     }
-    
-    .footer-links a {
-        margin-right: 20px;
-    }
 }
 
-/* Desktop */
 @media (min-width: 904px) {
+    /* SHOW NAV LINKS ON DESKTOP */
     .nav-links li {
-        display: block; /* Show all nav links on desktop */
+        display: block;
     }
     
+    /* SWITCH HERO BUTTON TO BLACK ON DESKTOP */
     .btn {
-        background-color: #191919; /* Black buttons on desktop */
+        background-color: #191919;
     }
     
     .hero {
         padding: 80px 0;
         min-height: 500px;
     }
-
     .hero-image {
         display: block;
         position: absolute;
@@ -211,18 +206,12 @@ footer {
         transform: translateY(-50%);
         width: 40%;
     }
-    
     .hero-title {
         font-size: 120px;
         line-height: 100px;
     }
-    
-    .hero-content {
-        text-align: left;
-    }
 }
 
-/* Large Desktop */
 @media (min-width: 1080px) {
     nav, .hero-container {
         max-width: 1192px;
@@ -231,14 +220,17 @@ footer {
     }
 }
 
-/* Hide all nav links on mobile */
+/* HIDE ALL NAV LINKS ON MOBILE (including Sign in) */
 @media (max-width: 903px) {
     .nav-links li {
-        display: none; /* Hide ALL nav links on mobile */
+        display: none;
+    }
+    .nav-right {
+        gap: 8px; /* Tighter spacing on mobile */
     }
 }
 
-/* Hover states for better UX */
+/* UX Polish */
 .btn:hover,
 .nav-link:hover {
     opacity: 0.9;
