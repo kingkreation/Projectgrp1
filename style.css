@@ -1,10 +1,11 @@
-
+/* 1. Base / Mobile Styles (Default) */
 body {
     font-family: 'GT-Super-Text-Book', 'Georgia', serif;
     margin: 0;
     padding: 0;
     color: #242424;
     background-color: #fff;
+    overflow-x: hidden; /* Prevents horizontal scroll on small screens */
 }
 
 a {
@@ -21,15 +22,18 @@ ul {
 }
 
 header {
-    background-color: #f7f4ed; /* Matching the cream color in screenshot */
+    background-color: #f7f4ed;
     border-bottom: 1px solid #242424;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 15px 24px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -46,14 +50,16 @@ nav {
     font-size: 14px;
 }
 
+/* Buttons */
 .btn {
-    background-color: #1a8917; /* Medium Green for Hero CTA */
+    background-color: #1a8917; 
     color: #fff;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 25px;
     font-size: 16px;
+    display: inline-block;
 }
 
 .btn-black {
@@ -66,39 +72,50 @@ nav {
     margin-top: 20px;
 }
 
+/* Hero Section Base */
 .hero {
     background-color: #f7f4ed;
-    padding: 80px 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-bottom: 1px solid #242424;
+    position: relative;
+    padding: 60px 0;
 }
 
-.hero-content {
-    max-width: 600px;
+.hero-container {
+    padding: 0 24px;
 }
 
-.hero h1 {
-    font-size: 100px; /* Large scale for desktop */
+.hero-title {
+    font-size: 70px; /* Default mobile size */
     line-height: 0.95;
-    margin-bottom: 35px;
+    margin-bottom: 24px;
     font-weight: 500;
+    word-break: break-word;
 }
 
-.hero p {
-    font-size: 24px;
+.hero-subtitle {
+    font-size: 18px;
     line-height: 1.2;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     color: #242424;
+    max-width: 440px;
 }
 
+.hero-image {
+    display: none; /* Hidden on mobile */
+}
+
+.hero-image img {
+    max-height: 450px;
+    object-fit: contain;
+}
+
+/* Footer Base */
 footer {
-    text-align: center;
-    padding: 40px;
+    padding: 40px 24px;
     background-color: #fff;
     font-size: 13px;
     color: #6b6b6b;
+    border-top: 1px solid #eee;
 }
 
 .footer-links {
@@ -109,29 +126,92 @@ footer {
     flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-    nav {
-        padding: 10px 20px;
-    }
+/* 2. Responsive Breakpoints */
 
-    .desktop-only {
-        display: none;
+/* Small Tablets / Large Phones */
+@media (min-width: 552px) {
+    .hero-container {
+        margin-top: 40px;
     }
+    
+    .hero-title {
+        font-size: 80px;
+        line-height: 72px;
+        letter-spacing: -0.055em;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
 
+/* Tablets (iPad) */
+@media (min-width: 728px) {
+    .hero-container {
+        margin-left: 48px;
+        margin-right: 48px;
+    }
+    
+    .hero-title {
+        font-size: 106px;
+        line-height: 95px;
+    }
+    
+    .hero-subtitle {
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 48px;
+    }
+    
+    .footer-links {
+        display: block;
+        text-align: center;
+    }
+    
+    .footer-links a {
+        margin-right: 20px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 904px) {
     .hero {
-        padding: 60px 20px;
+        padding: 80px 0;
+        min-height: 500px;
+    }
+
+    .hero-image {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 40%;
+    }
+    
+    .hero-title {
+        font-size: 120px;
+        line-height: 100px;
+    }
+    
+    .hero-content {
         text-align: left;
     }
+}
 
-    .hero h1 {
-        font-size: 70px;
+/* Large Desktop */
+@media (min-width: 1080px) {
+    nav, .hero-container {
+        max-width: 1192px;
+        margin-left: auto;
+        margin-right: auto;
     }
+}
 
-    .hero p {
-        font-size: 18px;
-    }
-
-    .btn {
-        background-color: #1a8917; /* As seen in mobile screenshot */
+/* Specific Mobile Utility: Hide links on small screens */
+@media (max-width: 727px) {
+    .nav-links li:not(:last-child) {
+        display: none; /* Keeps only the "Get Started" button visible */
     }
 }
