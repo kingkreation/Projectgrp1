@@ -211,10 +211,15 @@ footer {
         align-items: center;
     }
     
+    /* CRITICAL FIX: Vertically center content */
     .hero-container {
         max-width: 1192px;
         margin: 0 auto;
         width: 100%;
+        height: 100%; /* FULL HEIGHT */
+        display: flex; /* FLEX CONTAINER */
+        flex-direction: column; /* COLUMN LAYOUT */
+        justify-content: center; /* VERTICAL CENTERING */
     }
     
     .hero-image {
