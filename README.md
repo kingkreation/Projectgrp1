@@ -92,5 +92,5 @@ Inspired by [Medium.com](https://medium.com)
 Built for learning purposes only – not for production or commercial use.
 
 ---
-Made with ❤️ by FD Group 1 – BeTechified
+Made with ❤️ by FrontEnd Developement Group 1 – BeTechified
 ```
