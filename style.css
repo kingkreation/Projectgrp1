@@ -10,7 +10,6 @@ html {
   background-color: #000; /* Critical for black overscroll */
 }
 
-
 body {
     font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
     margin: 0;
@@ -101,13 +100,11 @@ nav {
 /* Hero Section */
 .hero {
     background: #f7f4ed;
-    position: relative;
+    position: relative; /* Critical for absolute positioning */
     padding: 60px 0;
     /* CRITICAL FIX: Prevents background bleeding under border */
     background-clip: padding-box;
     -webkit-background-clip: padding-box;
-    flex-direction: column; /* COLUMN LAYOUT */
-    justify-content: center; /* VERTICAL CENTERING */
 }
 
 .hero-container {
@@ -164,7 +161,6 @@ footer {
     margin-bottom: 15px;
     flex-wrap: wrap;
 }
-
 
 /* Responsive Breakpoints */
 @media (min-width: 552px) {
@@ -242,6 +238,7 @@ footer {
         right: 0;
         transform: translateY(-50%);
         width: 40%;
+        max-width: 600px; /* Prevents overflow on smaller screens */
     }
     
     .hero-title {
