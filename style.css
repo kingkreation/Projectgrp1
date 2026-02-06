@@ -122,7 +122,7 @@ nav {
     line-height: 0.95;
     margin-bottom: 24px;
     font-weight: 500;
-    word-break: break-word;
+ word-break: break-word;
     max-width: 100%;
     overflow-wrap: break-word;
 }
@@ -245,9 +245,21 @@ footer {
         font-size: 120px;
         line-height: 100px;
     }
+    
+    /* DESKTOP FOOTER FIXES */
+    footer {
+        background-color: #f7f4ed;
+        color: #242424;
+        border-top: 1px solid #e5e5;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        gap: 16px;
+    }
 }
 
-@media (min-width: 1080px) {
+@media (min: 1080px) {
     nav, .hero-container {
         max-width: 1192px;
         margin-left: auto;
@@ -262,6 +274,11 @@ footer {
     }
     .nav-right {
         gap: 8px; /* Tighter spacing on mobile */
+    }
+    
+    /* HIDE DESKTOP-ONLY FOOTER LINKS */
+    .desktop-only {
+        display: none;
     }
 }
 
