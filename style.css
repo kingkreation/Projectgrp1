@@ -1,13 +1,13 @@
-/* 1. Base / Mobile Styles (Default) */
+/* --- Global Reset & Base Styles --- */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* ADD THIS TO BASE STYLES */
 html {
-  background-color: #000; /* Critical for black overscroll */
+  /* Set black bg here so overscroll matches the dark footer */
+  background-color: #000; 
 }
 
 body {
@@ -15,7 +15,7 @@ body {
     margin: 0;
     padding: 0;
     color: #242424;
-    background-color: #f7f4ed; /* Prevents white space leakage */
+    background-color: #f7f4ed; 
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -39,6 +39,7 @@ ul {
     gap: 20px;
 }
 
+/* --- Header & Nav --- */
 header {
     background-color: #f7f4ed;
     border-bottom: 1px solid #242424;
@@ -63,7 +64,7 @@ nav {
     letter-spacing: -1.5px;
 }
 
-/* CRITICAL FIX: Align nav links + button horizontally */
+/* Align links and button in the same row */
 .nav-right {
     display: flex;
     align-items: center;
@@ -75,7 +76,7 @@ nav {
     font-size: 14px;
 }
 
-/* Buttons */
+/* --- Button Variants --- */
 .btn {
     color: #fff;
     padding: 10px 20px;
@@ -84,11 +85,11 @@ nav {
     border-radius: 25px;
     font-size: 16px;
     display: inline-block;
-    background-color: #1a8917; /* GREEN FOR MOBILE (hero button) */
+    background-color: #1a8917; /* Medium green for mobile hero */
 }
 
 .btn-black {
-    background-color: #191919; /* Header button stays black always */
+    background-color: #191919; /* Force black bg for header button */
 }
 
 .btn-large {
@@ -97,12 +98,12 @@ nav {
     margin-top: 20px;
 }
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
     background: #f7f4ed;
-    position: relative; /* Critical for absolute positioning */
+    position: relative; 
     padding: 60px 0;
-    /* CRITICAL FIX: Prevents background bleeding under border */
+    /* Prevent the background from leaking under the border edge */
     background-clip: padding-box;
     -webkit-background-clip: padding-box;
 }
@@ -114,7 +115,7 @@ nav {
 }
 
 .hero-content {
-    text-align: left; /* LEFT ALIGNED ON MOBILE (as requested) */
+    text-align: left; 
 }
 
 .hero-title {
@@ -137,7 +138,7 @@ nav {
 }
 
 .hero-image {
-    display: none;
+    display: none; /* Only visible on larger screens */
 }
 
 .hero-image img {
@@ -145,7 +146,7 @@ nav {
     object-fit: contain;
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
     margin-top: auto;
     padding: 40px 24px;
@@ -163,7 +164,9 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Responsive Breakpoints */
+/* --- Responsive Layouts --- */
+
+/* Small Tablets */
 @media (min-width: 552px) {
     .hero-container {
         margin-top: 40px;
@@ -179,14 +182,15 @@ footer {
     }
 }
 
+/* Standard Tablets */
 @media (min-width: 728px) {
     .hero-container {
         margin-left: 48px;
         margin-right: 48px;
-        height: 100%; /* FULL HEIGHT */
-        display: flex; /* FLEX CONTAINER */
-        flex-direction: column; /* COLUMN LAYOUT */
-        justify-content: center; /* VERTICAL CENTERING */
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
     }
     .hero-title {
         font-size: 106px;
@@ -198,20 +202,18 @@ footer {
         margin-bottom: 48px;
     }
     .footer-links {
-        display: flex;
         justify-content: center;
     }
 }
 
+/* Large Screens & Desktop */
 @media (min-width: 904px) {
-    /* SHOW NAV LINKS ON DESKTOP */
     .nav-links li {
         display: block;
     }
     
-    /* SWITCH HERO BUTTON TO BLACK ON DESKTOP */
     .btn {
-        background-color: #191919;
+        background-color: #191919; /* Swap hero button to black on desktop */
     }
     
     .hero {
@@ -221,15 +223,14 @@ footer {
         align-items: center;
     }
     
-    /* CRITICAL FIX: Vertically center content */
     .hero-container {
         max-width: 1192px;
         margin: 0 auto;
         width: 100%;
-        height: 100%; /* FULL HEIGHT */
-        display: flex; /* FLEX CONTAINER */
-        flex-direction: column; /* COLUMN LAYOUT */
-        justify-content: center; /* VERTICAL CENTERING */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .hero-image {
@@ -239,7 +240,7 @@ footer {
         right: 0;
         transform: translateY(-50%);
         width: 40%;
-        max-width: 600px; /* Prevents overflow on smaller screens */
+        max-width: 600px;
     }
     
     .hero-title {
@@ -247,16 +248,10 @@ footer {
         line-height: 100px;
     }
     
-    /* DESKTOP FOOTER FIXES */
     footer {
         background-color: #f7f4ed;
         color: #242424;
         border-top: 1px solid #e5e5e5;
-    }
-    
-    .footer-links {
-        justify-content: center;
-        gap: 16px;
     }
 }
 
@@ -268,41 +263,39 @@ footer {
     }
 }
 
-/* NAVIGATION BEHAVIOR BY SCREEN SIZE */
+/* --- Nav Visibility Logic --- */
 
-/* Tablet (728px - 903px): Show ALL nav links */
+/* Tablet: Show all links */
 @media (min-width: 728px) and (max-width: 903px) {
     .nav-links li {
         display: block;
     }
 }
 
-/* Small Tablet (552px - 727px): Show ONLY "Sign in" */
+/* Mid-Mobile: Only show 'Sign in' link */
 @media (min-width: 552px) and (max-width: 727px) {
     .nav-links li {
-        display: none; /* Hide all */
+        display: none;
     }
-    .nav-links li:nth-child(4) { /* Show only 4th child = "Sign in" */
+    .nav-links li:nth-child(4) { 
         display: block;
     }
 }
 
-/* Mobile (< 552px): Hide ALL nav links */
+/* Small Mobile: Hide all nav links to save space */
 @media (max-width: 551px) {
     .nav-links li {
         display: none;
     }
     .nav-right {
-        gap: 8px; /* Tighter spacing on mobile */
+        gap: 8px;
     }
-    
-    /* HIDE DESKTOP-ONLY FOOTER LINKS */
     .desktop-only {
         display: none;
     }
 }
 
-/* UX Polish */
+/* --- Polish --- */
 .btn:hover,
 .nav-link:hover {
     opacity: 0.9;
