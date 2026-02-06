@@ -133,15 +133,15 @@ nav {
 /* Footer */
 footer {
     padding: 40px 24px;
-    background-color: #fff;
+    background-color: #000;
     font-size: 13px;
-    color: #6b6b6b;
-    border-top: 1px solid #eee;
+    color: white;
+    border-top: 1px solid #000;
 }
 
 .footer-links {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 15px;
     margin-bottom: 15px;
     flex-wrap: wrap;
